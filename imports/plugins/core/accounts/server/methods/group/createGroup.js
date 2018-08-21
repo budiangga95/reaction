@@ -30,7 +30,7 @@ export default function createGroup(groupData, shopId) {
 
   // we are limiting group method actions to only users with admin roles
   // this also include shop owners, since they have the `admin` role in their Roles.GLOBAL_GROUP
-  if (!Reaction.hasPermission("admin", Meteor.userId(), shopId)) {
+  if (!Reaction.hasPermission("admin", Reaction.getUserId(), shopId)) {
     throw new ReactionError("access-denied", "Access Denied");
   }
 
