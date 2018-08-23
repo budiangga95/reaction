@@ -344,7 +344,7 @@ class LineItems extends Component {
         ))}
 
         {
-          Roles.userIsInRole(Meteor.userId(), ["orders", "dashboard/orders"], Reaction.getShopId()) &&
+          Roles.userIsInRole(Reaction.getUserId(), ["orders", "dashboard/orders"], Reaction.getShopId()) &&
           this.renderPopOver()
         }
       </Components.Button>
